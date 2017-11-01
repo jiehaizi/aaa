@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<button class="btn">打开app</button>
+
+		<!-- 2. Include library -->
+		<script src="dist/clipboard.min.js"></script>
+
+		<!-- 3. Instantiate clipboard -->
+		<script>
+			var clipboard = new Clipboard({
+				text: function() {
+					return 'android.intent.action.hello';
+				}
+			});
+
+			clipboard.on('success', function(e) {
+				console.log(e);
+			});
+
+			clipboard.on('error', function(e) {
+				console.log(e);
+			});
+		</script>
+	</body>
+
+</html>
